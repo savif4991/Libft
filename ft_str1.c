@@ -62,7 +62,7 @@ char    *ft_strchr(const char *s, int c)
     while (s[i])
     {
         if (s[i] == a)
-            return (&s[i]);
+            return ((char *)&s[i]);
         else
             i++;
     }
@@ -81,7 +81,7 @@ char    *ft_strrchr(const char *s, int c)
     {
         if (s[i] == a)
         {
-            res = &s[i];
+            res = (char *)&s[i];
             while (1)
             {
                 i++;

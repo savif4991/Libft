@@ -48,8 +48,9 @@ static void    malloc_by_wd(char **res, char const *s, char c, unsigned int wd_c
     res[i] = 0;
 }
 
-{
+
 char    **ft_split(char const *s, char c)
+{
     unsigned int    wd_count;
     unsigned int    i;
     unsigned int    j;
