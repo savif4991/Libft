@@ -1,9 +1,28 @@
 #include "./Part 1/ft_is.c"
 #include "./Part 1/ft_mem1.c"
+#include "./Part 2/ft_itoa.c"
+#include "./Part 2/ft_strmapi.c"
+#include "./Part 2/ft_striteri.c"
 #include <ctype.h>
 #include <stdlib.h>
 #include <string.h>
 #include <stdio.h>
+
+char    mapi_test(unsigned int i, char c)
+{
+    i = 0;
+    return (c);
+}
+
+void    *iteri_test(unsigned int i, char *c)
+{//소문자를 대문자로 바꾸는 함수
+    i = 0;
+    char    a;
+
+    a = *c;
+    if (a <= 'z' && a >= 'a')
+        a -= 32;
+}
 
 int     main()
 {/*
@@ -21,7 +40,7 @@ int     main()
             }
         else
             printf("%d success.\n", i);
-    }*/
+    }
     printf("--------------------TESTCASE for [ft_mem.c]--------------------\n");
     int    *numptr1 = malloc(sizeof(int));
     int    *numptr2 = malloc(sizeof(int));
@@ -30,5 +49,19 @@ int     main()
     printf("%d %d\n", *numptr1, *numptr2);
     free(numptr1);
     free(numptr2);
+    printf("--------------------TESTCASE for [ft_itoa.c]--------------------\n");
+    printf("%s\n", ft_itoa(2147483647));
+    printf("%s\n", ft_itoa(-2147483648));
+    printf("%s\n", ft_itoa(0));
+    printf("%s\n", ft_itoa(0.1));
+    printf("%s\n", ft_itoa(-0.1));
+    printf("--------------------TESTCASE for [ft_strmapi.c]--------------------\n");
+    char const *s1 = "I'm testing ft_strmapi.";
+    printf("%s\n", ft_strmapi(s, mapi_test));
+    printf("--------------------TESTCASE for [ft_striteri.c]--------------------\n");
+    char *s2 = "I'm testing ft_striteri.";
+    ft_striteri(s2, iteri_test);//재검토 필요
+    printf("%s\n", s2);*/
+    
     return (0);
 }
