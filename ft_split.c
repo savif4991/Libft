@@ -2,7 +2,7 @@
 //'c'를 구분자로 활용해 's'를 쪼개어 할당한 새로운 문자열의 배열을 리턴하시오.
 //배열은 NULL포인터로 끝나야함.
 
-unsigned int    count_wd(char const *s, char c)
+static unsigned int    count_wd(char const *s, char c)
 {
     unsigned int    i;
     unsigned int    count;
@@ -20,7 +20,7 @@ unsigned int    count_wd(char const *s, char c)
     return (count);
 }
 
-void    malloc_by_wd(char **res, char const *s, char c, unsigned int wd_count)
+static void    malloc_by_wd(char **res, char const *s, char c, unsigned int wd_count)
 {
     unsigned int    wd_size;
     unsigned int    i;
@@ -48,8 +48,8 @@ void    malloc_by_wd(char **res, char const *s, char c, unsigned int wd_count)
     res[i] = 0;
 }
 
-char    **ft_split(char const *s, char c)
 {
+char    **ft_split(char const *s, char c)
     unsigned int    wd_count;
     unsigned int    i;
     unsigned int    j;

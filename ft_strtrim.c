@@ -1,7 +1,7 @@
 #include <stdlib.h>
 //'s1'의 복사본 전체에서 'set'에서 명시된 글자들을 제거한 문자열을 할당하고 리턴한다.
 
-char    *ft_strchr(const char *s, int c)
+static char    *ft_strchr(const char *s, int c)
 {
     char    a;
     int     i;
@@ -18,7 +18,7 @@ char    *ft_strchr(const char *s, int c)
     return (0);
 }
 
-unsigned int    get_count_for_malloc(char const *s1, char const *set)
+static unsigned int    get_count_for_malloc(char const *s1, char const *set)
 {
     unsigned int    i;
     unsigned int    j;

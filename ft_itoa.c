@@ -1,7 +1,7 @@
 #include <stdlib.h>
 //정수를 표시하는 문자열을 리턴할것. 말록 실패시 NULL리턴.
 
-unsigned int    get_count_for_malloc(unsigned int n)
+static unsigned int    get_count_for_malloc(unsigned int n)
 {
     unsigned int    res;
 
@@ -14,7 +14,7 @@ unsigned int    get_count_for_malloc(unsigned int n)
     return (res);
 }
 
-void    *alloc_num(char *res, unsigned int n, unsigned int dig)
+static void    *alloc_num(char *res, unsigned int n, unsigned int dig)
 {
     unsigned int    div;
     unsigned int    i;

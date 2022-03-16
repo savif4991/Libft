@@ -1,8 +1,4 @@
-#include "./Part 1/ft_is.c"
-#include "./Part 1/ft_mem1.c"
-#include "./Part 2/ft_itoa.c"
-#include "./Part 2/ft_strmapi.c"
-#include "./Part 2/ft_striteri.c"
+#include "libft.h"
 #include <ctype.h>
 #include <stdlib.h>
 #include <string.h>
@@ -25,7 +21,7 @@ void    *iteri_test(unsigned int i, char *c)
 }
 
 int     main()
-{/*
+{
     printf("--------------------TESTCASE for [ft_is.c]--------------------\n");
     for (int i = 0; i < 128; i++)
     {
@@ -61,7 +57,7 @@ int     main()
     printf("--------------------TESTCASE for [ft_striteri.c]--------------------\n");
     char *s2 = "I'm testing ft_striteri.";
     ft_striteri(s2, iteri_test);//재검토 필요
-    printf("%s\n", s2);*/
+    printf("%s\n", s2);
     
     return (0);
 }
