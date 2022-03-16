@@ -53,7 +53,7 @@ int     main()
     printf("%s\n", ft_itoa(-0.1));
     printf("--------------------TESTCASE for [ft_strmapi.c]--------------------\n");
     char const *s1 = "I'm testing ft_strmapi.";
-    printf("%s\n", ft_strmapi(s, mapi_test));
+    printf("%s\n", ft_strmapi(s1, mapi_test));
     printf("--------------------TESTCASE for [ft_striteri.c]--------------------\n");
     char *s2 = "I'm testing ft_striteri.";
     ft_striteri(s2, iteri_test);//재검토 필요
