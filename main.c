@@ -1,5 +1,5 @@
-#include "ft_is.c"
-#include "ft_mem.c"
+#include "./Part 1/ft_is.c"
+#include "./Part 1/ft_mem1.c"
 #include <ctype.h>
 #include <stdlib.h>
 #include <string.h>
