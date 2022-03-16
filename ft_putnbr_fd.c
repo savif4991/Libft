@@ -4,7 +4,6 @@ void    ft_putnbr_fd(int n, int fd)
 {
     unsigned int    num;
     unsigned int    num_copy;
-    unsigned int    i;
     unsigned int    div;
     char            temp;
 
@@ -20,7 +19,6 @@ void    ft_putnbr_fd(int n, int fd)
     }
     else
         num = n;
-    i = 0;
     div = 1;
     num_copy = num;
     while (num_copy >= 10)

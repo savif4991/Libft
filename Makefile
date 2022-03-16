@@ -1,17 +1,19 @@
 CC = gcc
-TARGET = libft.exe
-OBJECTS = ft_calloc_ft_strdup.o ft_fd.o ft_is.o ft_itoa.o ft_mem1.o ft_mem2.o ft_split.o ft_str1.o ft_str2.o ft_striteri.o ft_strjoin.o ft_strmapi.o ft_strtrim.o ft_substr.o ft_to.o
+CFLAGS = -Wall -Wextra -Werror
 
-all : $(TARGET)
+NAME = libft.a
 
-CFLAGS = -Wall -Wetra -Werror
-LDFLAGS = -lc
+OBJECTS = ft_atoi.o ft_bzero.o ft_calloc.o ft_isalnum.o ft_isalpha.o ft_isascii.o ft_isdigit.o ft_isprint.o ft_itoa.o ft_memchr.o ft_memcmp.o ft_memcpy.o ft_memmove.o ft_memset.o ft_putchar_fd.o ft_putendl_fd.o ft_putnbr_fd.o ft_putstr_fd.o ft_split.o ft_strchr.o ft_strdup.o ft_striteri.o ft_strjoin.o ft_strlcat.o ft_strlcpy.o ft_strlen.o ft_strmapi.o ft_strncmp.o ft_strnstr.o ft_strrchr.o ft_strtrim.o ft_substr.o ft_tolower.o ft_toupper.o
 
-.c.o : 
-	$(CC) $(CFALGS) -c -o $@ $<
+all : $(NAME)
 
-$(TARGET) : $(OBJECTS)
-	$(CC) $(LDFLAGS) -o $@ $^
+$(NAME) : $(OBJECTS)
+	ar rcs $(NAME) $(OBJECTS)
 
 clean :
-	rm -f $(OBJECTS) $(TARGET)
+	rm -f $(OBJECTS)
+
+fclean : clean
+	rm -f $(NAME)
+
+re : fclean $(NAME)

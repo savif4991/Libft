@@ -16,7 +16,7 @@ char    *ft_strnstr(const char *s1, const char *s2, unsigned int n)
                     i++;
                     j++;
                     if (s2[j] == '\0')
-                        return (&s1[i]);
+                        return ((char *)&s1[i]);
                 }
                 else
                     break ;

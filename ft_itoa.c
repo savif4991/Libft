@@ -14,7 +14,7 @@ static unsigned int    get_count_for_malloc(unsigned int n)
     return (res);
 }
 
-static void    *alloc_num(char *res, unsigned int n, unsigned int dig)
+static void    alloc_num(char *res, unsigned int n, unsigned int dig)
 {
     unsigned int    div;
     unsigned int    i;

@@ -1,9 +1,9 @@
 void    *ft_memmove(void *dest, const void *src, unsigned int n)
 {
-    int     i;
-    char    *temp_d;
-    char    *temp_s;
-    char    temp[n];
+    unsigned int    i;
+    char            *temp_d;
+    char            *temp_s;
+    char            temp[n];
 
     i = 0;
     temp_d = (char *)dest;

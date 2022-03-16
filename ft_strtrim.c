@@ -11,7 +11,7 @@ static char    *ft_strchr(const char *s, int c)
     while (s[i])
     {
         if (s[i] == a)
-            return (&s[i]);
+            return ((char *)&s[i]);
         else
             i++;
     }

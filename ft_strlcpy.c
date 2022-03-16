@@ -1,6 +1,5 @@
 unsigned int    ft_strlcpy(char *dst, const char *src, unsigned int size)
 {
-    char            *src;
     unsigned int    i;
 
     i = 0;
