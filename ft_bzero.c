@@ -6,20 +6,20 @@
 /*   By: daejlee <daejlee@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/19 15:27:00 by daejlee           #+#    #+#             */
-/*   Updated: 2022/03/19 15:28:03 by daejlee          ###   ########.fr       */
+/*   Updated: 2022/03/19 15:46:37 by daejlee          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-void    ft_bzero(void *s, unsigned int n)
+void	ft_bzero(void *s, unsigned int n)
 {
-    unsigned int    i;
-    char            *c;
+	unsigned int	i;
+	char			*c;
 
-    c = (char *)s;
-    i = 0;
-    while (i < n)
-    {
-        c[i] = '\0';
-        i++;
-    }
+	c = (char *)s;
+	i = 0;
+	while (i < n)
+	{
+		c[i] = '\0';
+		i++;
+	}
 }

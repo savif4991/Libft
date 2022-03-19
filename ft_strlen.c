@@ -6,16 +6,16 @@
 /*   By: daejlee <daejlee@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/19 15:27:38 by daejlee           #+#    #+#             */
-/*   Updated: 2022/03/19 15:28:03 by daejlee          ###   ########.fr       */
+/*   Updated: 2022/03/19 17:40:44 by daejlee          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-unsigned int      ft_strlen(const char *s)
+unsigned int	ft_strlen(const char *s)
 {
-    unsigned int    i;
+	unsigned int	i;
 
-    i = 0;
-    while (s[i])
-        i++;
-    return (i);
+	i = 0;
+	while (s[i])
+		i++;
+	return (i);
 }

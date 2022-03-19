@@ -6,23 +6,23 @@
 /*   By: daejlee <daejlee@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/19 15:27:37 by daejlee           #+#    #+#             */
-/*   Updated: 2022/03/19 15:28:03 by daejlee          ###   ########.fr       */
+/*   Updated: 2022/03/19 17:40:10 by daejlee          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-unsigned int    ft_strlcpy(char *dst, const char *src, unsigned int size)
+unsigned int	ft_strlcpy(char *dst, const char *src, unsigned int size)
 {
-    unsigned int    i;
+	unsigned int	i;
 
-    i = 0;
-    while (i + 1 < size && dst[i] && src[i])
-    {
-        dst[i] = src[i];
-        i++;
-    }
-    dst[i] = '\0';
-    i = 0;
-    while (src[i])
-        i++;
-    return (i);
+	i = 0;
+	while (i + 1 < size && dst[i] && src[i])
+	{
+		dst[i] = src[i];
+		i++;
+	}
+	dst[i] = '\0';
+	i = 0;
+	while (src[i])
+		i++;
+	return (i);
 }

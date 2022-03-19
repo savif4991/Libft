@@ -6,21 +6,21 @@
 /*   By: daejlee <daejlee@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/19 15:27:19 by daejlee           #+#    #+#             */
-/*   Updated: 2022/03/19 15:28:03 by daejlee          ###   ########.fr       */
+/*   Updated: 2022/03/19 17:08:41 by daejlee          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-void    *ft_memset(void *s, int c, unsigned int n)
+void	*ft_memset(void *s, int c, unsigned int n)
 {
-    unsigned int    i;
-    char            *p;
+	unsigned int	i;
+	char			*p;
 
-    i = 0;
-    p = (char *)s;
-    while (i < n)
-    {
-        p[i] = (char)c;
-        i++;
-    }
-    return (s);
+	i = 0;
+	p = (char *)s;
+	while (i < n)
+	{
+		p[i] = (char)c;
+		i++;
+	}
+	return (s);
 }

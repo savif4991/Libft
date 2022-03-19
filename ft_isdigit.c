@@ -6,17 +6,17 @@
 /*   By: daejlee <daejlee@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/19 15:27:08 by daejlee           #+#    #+#             */
-/*   Updated: 2022/03/19 15:28:03 by daejlee          ###   ########.fr       */
+/*   Updated: 2022/03/19 15:54:26 by daejlee          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-int     ft_isdigit(int c)
+int	ft_isdigit(int c)
 {
-    char    a;
+	char	a;
 
-    a = (char)c;
-    if (a <= '9' && a >= '0')
-        return (2048);
-    else
-        return (0);
+	a = (char)c;
+	if (a <= '9' && a >= '0')
+		return (2048);
+	else
+		return (0);
 }

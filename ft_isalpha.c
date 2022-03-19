@@ -6,19 +6,19 @@
 /*   By: daejlee <daejlee@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/19 15:27:05 by daejlee           #+#    #+#             */
-/*   Updated: 2022/03/19 15:28:03 by daejlee          ###   ########.fr       */
+/*   Updated: 2022/03/19 15:51:04 by daejlee          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-int     ft_isalpha(int c)
+int	ft_isalpha(int c)
 {
-    char    a;
+	char	a;
 
-    a = (char)c;
-    if (a <= 'Z' && a >= 'A')
-        return (1024);
-    else if (a <= 'z' && a >= 'a')
-        return (1024);
-    else
-        return (0);
+	a = (char)c;
+	if (a <= 'Z' && a >= 'A')
+		return (1024);
+	else if (a <= 'z' && a >= 'a')
+		return (1024);
+	else
+		return (0);
 }

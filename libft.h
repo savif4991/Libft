@@ -6,10 +6,10 @@
 /*   By: daejlee <daejlee@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/19 15:27:54 by daejlee           #+#    #+#             */
-/*   Updated: 2022/03/19 15:29:32 by daejlee          ###   ########.fr       */
+/*   Updated: 2022/03/19 15:27:54 by daejlee          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
-
+#ifndef LIBFT_H
 # define LIBFT_H
 # include <unistd.h>
 # include <stdlib.h>

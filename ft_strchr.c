@@ -6,23 +6,23 @@
 /*   By: daejlee <daejlee@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/19 15:27:29 by daejlee           #+#    #+#             */
-/*   Updated: 2022/03/19 15:28:03 by daejlee          ###   ########.fr       */
+/*   Updated: 2022/03/19 17:33:25 by daejlee          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-char    *ft_strchr(const char *s, int c)
+char	*ft_strchr(const char *s, int c)
 {
-    char    a;
-    int     i;
+	char	a;
+	int		i;
 
-    a = (char)c;
-    i = 0;
-    while (s[i])
-    {
-        if (s[i] == a)
-            return ((char *)&s[i]);
-        else
-            i++;
-    }
-    return (0);
+	a = (char)c;
+	i = 0;
+	while (s[i])
+	{
+		if (s[i] == a)
+			return ((char *)&s[i]);
+		else
+			i++;
+	}
+	return (0);
 }

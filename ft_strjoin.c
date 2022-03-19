@@ -6,46 +6,45 @@
 /*   By: daejlee <daejlee@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/19 15:27:32 by daejlee           #+#    #+#             */
-/*   Updated: 2022/03/19 15:28:03 by daejlee          ###   ########.fr       */
+/*   Updated: 2022/03/19 17:37:50 by daejlee          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
-
 #include "libft.h"
 
-static unsigned int      ft_strlen(const char *s)
+static unsigned int	ft_strlen(const char *s)
 {
-    unsigned int    i;
+	unsigned int	i;
 
-    i = 0;
-    while (s[i])
-        i++;
-    return (i);
+	i = 0;
+	while (s[i])
+		i++;
+	return (i);
 }
 
-char    *ft_strjoin(char const *s1, char const *s2)
+char	*ft_strjoin(char const *s1, char const *s2)
 {
-    int             i;
-    unsigned int    s1_len;
-    unsigned int    s2_len;
-    char            *res;
+	int				i;
+	unsigned int	s1_len;
+	unsigned int	s2_len;
+	char			*res;
 
-    s1_len = ft_strlen(s1);
-    s2_len = ft_strlen(s2);
-    res = (char *)malloc(sizeof(char) * (s1_len + s2_len + 1));
-    if (res == 0)
-        return (0);
-    i = 0;
-    while (s1[i])
-    {
-        res[i] = s1[i];
-        i++;
-    }
-    i = 0;
-    while (s2[i])
-    {
-        res[s1_len + i] = s2[i];
-        i++;
-    }
-    res[s1_len + i] = '\0';
-    return (res);
+	s1_len = ft_strlen(s1);
+	s2_len = ft_strlen(s2);
+	res = (char *)malloc(sizeof(char) * (s1_len + s2_len + 1));
+	if (res == 0)
+		return (0);
+	i = 0;
+	while (s1[i])
+	{
+		res[i] = s1[i];
+		i++;
+	}
+	i = 0;
+	while (s2[i])
+	{
+		res[s1_len + i] = s2[i];
+		i++;
+	}
+	res[s1_len + i] = '\0';
+	return (res);
 }
