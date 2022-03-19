@@ -1,5 +1,5 @@
-#include <unistd.h>
-//정수 'n'을 주어진 파일 서술자에 따라 출력한다.
+#include "libft.h"
+
 void    ft_putnbr_fd(int n, int fd)
 {
     unsigned int    num;

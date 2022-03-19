@@ -1,4 +1,4 @@
-#include <stdlib.h>
+#include "libft.h"
 
 static unsigned int      ft_strlen(const char *s)
 {
@@ -10,7 +10,6 @@ static unsigned int      ft_strlen(const char *s)
     return (i);
 }
 
-//s1과 s2의 붙임본을 할당하고 리턴한다.
 char    *ft_strjoin(char const *s1, char const *s2)
 {
     int             i;

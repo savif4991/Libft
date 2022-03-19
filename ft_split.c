@@ -1,6 +1,4 @@
-#include <stdlib.h>
-//'c'를 구분자로 활용해 's'를 쪼개어 할당한 새로운 문자열의 배열을 리턴하시오.
-//배열은 NULL포인터로 끝나야함.
+#include "libft.h"
 
 static unsigned int    count_wd(char const *s, char c)
 {

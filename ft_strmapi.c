@@ -1,7 +1,4 @@
-#include <stdlib.h>
-//함수 'f'를 문자열 's'의 각 문자들에 적용시키고,
-//'f'함수의 연속 적용이 된 새 문자열을 만들기 위해(malloc을 통해)
-//인덱스를 'f'의 첫 번째 인자로 넘겨준다.
+#include "libft.h"
 
 char    *ft_strmapi(char const *s, char (*f)(unsigned int, char))
 {

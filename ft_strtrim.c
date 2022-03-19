@@ -1,5 +1,4 @@
-#include <stdlib.h>
-//'s1'의 복사본 전체에서 'set'에서 명시된 글자들을 제거한 문자열을 할당하고 리턴한다.
+#include "libft.h"
 
 static char    *ft_strchr(const char *s, int c)
 {

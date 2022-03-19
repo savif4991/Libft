@@ -1,5 +1,4 @@
-#include <stdlib.h>
-//정수를 표시하는 문자열을 리턴할것. 말록 실패시 NULL리턴.
+#include "libft.h"
 
 static unsigned int    get_count_for_malloc(unsigned int n)
 {
