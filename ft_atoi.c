@@ -3,13 +3,12 @@
 /*                                                        :::      ::::::::   */
 /*   ft_atoi.c                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: daejlee <daejlee@student.42seoul.k>        +#+  +:+       +#+        */
+/*   By: daejlee <daejlee@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/03/19 15:26:13 by daejlee           #+#    #+#             */
-/*   Updated: 2022/03/19 15:26:16 by daejlee          ###   ########.fr       */
+/*   Created: 2022/03/19 15:26:54 by daejlee           #+#    #+#             */
+/*   Updated: 2022/03/19 15:28:34 by daejlee          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
-
 
 int    ft_atoi(const char *nptr)
 {
