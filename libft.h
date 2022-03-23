@@ -6,7 +6,7 @@
 /*   By: daejlee <daejlee@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/19 15:27:54 by daejlee           #+#    #+#             */
-/*   Updated: 2022/03/23 15:47:30 by daejlee          ###   ########.fr       */
+/*   Updated: 2022/03/23 18:32:28 by daejlee          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 #ifndef LIBFT_H
@@ -33,7 +33,7 @@ char			*ft_strrchr(const char *s, int c);
 int				ft_strncmp(const char *s1, const char *s2, unsigned char n);
 void			*ft_memchr(const void *s, int c, unsigned int n);
 int				ft_memcmp(const void *s1, const void *s2, size_t n);
-char			*ft_strnstr(const char *s1, const char *s2, unsigned int n);
+char			*ft_strnstr(const char *s1, const char *s2, size_t n);
 int				ft_atoi(const char *nptr);
 void			*ft_calloc(unsigned int nmemb, unsigned int size);
 char			*ft_strdup(const char *s);
