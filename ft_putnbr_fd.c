@@ -6,13 +6,15 @@
 /*   By: daejlee <daejlee@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/19 15:27:25 by daejlee           #+#    #+#             */
-/*   Updated: 2022/03/19 17:17:38 by daejlee          ###   ########.fr       */
+/*   Updated: 2022/03/23 12:19:14 by daejlee          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 #include "libft.h"
 
 static unsigned int	process_num(int n, int fd)
 {
+	unsigned int	num;
+
 	if (n == 0)
 	{
 		write(fd, "0", 1);

@@ -6,16 +6,13 @@
 /*   By: daejlee <daejlee@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/19 15:27:49 by daejlee           #+#    #+#             */
-/*   Updated: 2022/03/19 15:28:03 by daejlee          ###   ########.fr       */
+/*   Updated: 2022/03/23 13:53:32 by daejlee          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-int    ft_tolower(int c)
+int	ft_tolower(int c)
 {
-    char    a;
-
-    a = (char)c;
-    if (a <= 'Z' && a >= 'A')
-        a += 32;
-    return ((int)a);
+	if (c <= 'Z' && c >= 'A')
+		c += 32;
+	return (c);
 }

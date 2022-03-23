@@ -6,21 +6,18 @@
 /*   By: daejlee <daejlee@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/19 15:27:04 by daejlee           #+#    #+#             */
-/*   Updated: 2022/03/19 15:50:13 by daejlee          ###   ########.fr       */
+/*   Updated: 2022/03/23 13:51:07 by daejlee          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 int	ft_isalnum(int c)
 {
-	char	a;
-
-	a = (char)c;
-	if (a <= 'Z' && a >= 'A')
-		return (8);
-	else if (a <= 'z' && a >= 'a')
-		return (8);
-	else if (a <= '9' && a >= '0')
-		return (8);
+	if (c <= 'Z' && c >= 'A')
+		return (1);
+	else if (c <= 'z' && c >= 'a')
+		return (1);
+	else if (c <= '9' && c >= '0')
+		return (1);
 	else
 		return (0);
 }

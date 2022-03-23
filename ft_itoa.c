@@ -6,10 +6,9 @@
 /*   By: daejlee <daejlee@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/19 15:27:12 by daejlee           #+#    #+#             */
-/*   Updated: 2022/03/19 16:04:03 by daejlee          ###   ########.fr       */
+/*   Updated: 2022/03/19 20:00:57 by daejlee          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
-
 #include "libft.h"
 
 static unsigned int	get_count_for_malloc(unsigned int n)
@@ -52,6 +51,21 @@ static void	alloc_num(char *res, unsigned int n, unsigned int dig)
 	res[i] = '\0';
 }
 
+static unsigned int	process_num(int n, unsigned int *m_count, int *sign)
+{
+	unsigned int	num;
+
+	if (n < 0)
+	{
+		*m_count += 1;
+		*sign *= -1;
+		num = -n;
+	}
+	else
+		num = n;
+	return (num);
+}
+
 char	*ft_itoa(int n)
 {
 	unsigned int	m_count;
@@ -62,14 +76,7 @@ char	*ft_itoa(int n)
 
 	m_count = 0;
 	sign = 1;
-	if (n < 0)
-	{
-		m_count += 1;
-		sign *= -1;
-		num = -n;
-	}
-	else
-		num = n;
+	num = process_num(n, &m_count, &sign);
 	m_count += get_count_for_malloc(num);
 	res = (char *)malloc(sizeof(char) * (m_count + 1));
 	if (res == 0)

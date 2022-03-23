@@ -6,34 +6,35 @@
 /*   By: daejlee <daejlee@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/19 15:27:45 by daejlee           #+#    #+#             */
-/*   Updated: 2022/03/19 15:28:03 by daejlee          ###   ########.fr       */
+/*   Updated: 2022/03/23 15:31:18 by daejlee          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-char    *ft_strrchr(const char *s, int c)
+char	*ft_strrchr(const char *s, int c)
 {
-    char    a;
-    int     i;
-    char    *res;
+	unsigned int		i;
+	char				*res;
 
-    a = (char)c;
-    i = 0;
-    while (s[i])
-    {
-        if (s[i] == a)
-        {
-            res = (char *)&s[i];
-            while (1)
-            {
-                i++;
-                if (s[i] == a)
-                    break ;
-                else if (s[i] == '\0')
-                    return (res);
-            }
-        }
-        else
-            i++;
-    }
-    return (0);
+	i = 0;
+	while (s[i])
+	{
+		if (s[i] == c)
+		{
+			res = (char *)&s[i];
+			while (1)
+			{
+				i++;
+				if (s[i] == c)
+					break ;
+				else if (s[i] == '\0')
+					return (res);
+			}
+		}
+		else
+			i++;
+	}
+	if (c == 0)
+		return ((char *)&s[i]);
+	else
+		return (0);
 }

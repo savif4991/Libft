@@ -6,16 +6,13 @@
 /*   By: daejlee <daejlee@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/19 15:27:07 by daejlee           #+#    #+#             */
-/*   Updated: 2022/03/19 15:53:38 by daejlee          ###   ########.fr       */
+/*   Updated: 2022/03/23 13:51:54 by daejlee          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 int	ft_isascii(int c)
 {
-	char	a;
-
-	a = (char)c;
-	if (a >= 0 && a < 127)
+	if (c >= 0 && c <= 127)
 		return (1);
 	else
 		return (0);

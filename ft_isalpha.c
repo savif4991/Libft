@@ -6,19 +6,15 @@
 /*   By: daejlee <daejlee@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/19 15:27:05 by daejlee           #+#    #+#             */
-/*   Updated: 2022/03/19 15:51:04 by daejlee          ###   ########.fr       */
+/*   Updated: 2022/03/23 13:49:46 by daejlee          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
+#include "libft.h"
 
 int	ft_isalpha(int c)
 {
-	char	a;
-
-	a = (char)c;
-	if (a <= 'Z' && a >= 'A')
-		return (1024);
-	else if (a <= 'z' && a >= 'a')
-		return (1024);
+	if ((c <= 'Z' && c >= 'A') || (c <= 'z' && c >= 'a'))
+		return (1);
 	else
 		return (0);
 }

@@ -6,20 +6,10 @@
 /*   By: daejlee <daejlee@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/19 15:27:32 by daejlee           #+#    #+#             */
-/*   Updated: 2022/03/19 17:37:50 by daejlee          ###   ########.fr       */
+/*   Updated: 2022/03/23 12:21:00 by daejlee          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 #include "libft.h"
-
-static unsigned int	ft_strlen(const char *s)
-{
-	unsigned int	i;
-
-	i = 0;
-	while (s[i])
-		i++;
-	return (i);
-}
 
 char	*ft_strjoin(char const *s1, char const *s2)
 {

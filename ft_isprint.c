@@ -6,17 +6,14 @@
 /*   By: daejlee <daejlee@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/19 15:27:10 by daejlee           #+#    #+#             */
-/*   Updated: 2022/03/19 15:55:06 by daejlee          ###   ########.fr       */
+/*   Updated: 2022/03/23 13:52:22 by daejlee          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 int	ft_isprint(int c)
 {
-	char	a;
-
-	a = (char)c;
-	if (a <= 126 && a >= 32)
-		return (16384);
+	if (c <= 126 && c >= 32)
+		return (1);
 	else
 		return (0);
 }
