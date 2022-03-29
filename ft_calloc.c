@@ -9,13 +9,12 @@
 /*   Updated: 2022/03/19 15:48:47 by daejlee          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
-
 #include "libft.h"
 
-void	*ft_calloc(unsigned int nmemb, unsigned int size)
+void	*ft_calloc(size_t nmemb, size_t size)
 {
 	char				*arr;
-	unsigned int		i;
+	size_t		i;
 	unsigned long long	temp;
 
 	temp = (unsigned long long)(nmemb * size);

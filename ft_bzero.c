@@ -9,11 +9,12 @@
 /*   Updated: 2022/03/19 15:46:37 by daejlee          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
+#include "libft.h"
 
-void	ft_bzero(void *s, unsigned int n)
+void	ft_bzero(void *s, size_t n)
 {
-	unsigned int	i;
-	char			*c;
+	size_t	i;
+	char	*c;
 
 	c = (char *)s;
 	i = 0;

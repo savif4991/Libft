@@ -9,12 +9,13 @@
 /*   Updated: 2022/03/19 16:12:56 by daejlee          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
+#include "libft.h"
 
-void	*ft_memchr(const void *s, int c, unsigned int n)
+void	*ft_memchr(const void *s, int c, size_t n)
 {
-	unsigned int	i;
-	char			*temp;
-	char			a;
+	size_t	i;
+	char	*temp;
+	char	a;
 
 	i = 0;
 	a = (char)c;
@@ -26,5 +27,4 @@ void	*ft_memchr(const void *s, int c, unsigned int n)
 		else
 			i++;
 	}
-	return (0);
 }

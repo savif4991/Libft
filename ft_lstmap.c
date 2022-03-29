@@ -17,8 +17,11 @@ t_list	*ft_lstmap(t_list *lst, void *(*f)(void *), void (*del)(void *))
 	{
 		new_list->content = f(lst->content);
 		new_list->next = (t_list *)malloc(sizeof(t_list));
-		if (new_list == 0)
+		if (new_list->next == 0)
+		{
+			ft_lstclear(&res, del);
 			return (0);
+		}
 		new_list = new_list->next;
 		temp = lst;
 		lst = lst->next;

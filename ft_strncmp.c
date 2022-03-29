@@ -9,10 +9,11 @@
 /*   Updated: 2022/03/23 15:34:50 by daejlee          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
+#include "libft.h"
 
-int	ft_strncmp(const char *s1, const char *s2, unsigned char n)
+int	ft_strncmp(const char *s1, const char *s2, size_t n)
 {
-	unsigned int	i;
+	size_t	i;
 
 	i = 0;
 	while (i < n)
