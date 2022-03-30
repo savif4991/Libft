@@ -6,77 +6,96 @@
 /*   By: daejlee <daejlee@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/19 15:27:46 by daejlee           #+#    #+#             */
-/*   Updated: 2022/03/23 12:27:20 by daejlee          ###   ########.fr       */
+/*   Updated: 2022/03/30 17:21:24 by daejlee          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 #include "libft.h"
 
-static unsigned int	get_count_for_malloc(char const *s1, char const *set)
+static int	is_set(char c, char const *set)
 {
-	unsigned int	i;
 	unsigned int	j;
-	unsigned int	count;
 
-	i = 0;
-	count = 0;
-	while (s1[i])
+	j = 0;
+	while (set[j])
 	{
-		j = 0;
-		while (set[j])
-		{
-			if (ft_strchr(&s1[i], set[j]) == 0)
-			{
-				j++;
-				if (set[j] == '\0')
-					count++;
-			}
-			else
-				break ;
-		}
-		i++;
+		if (c != set[j])
+			j++;
+		else
+			return (1);
 	}
-	return (count);
+	return (0);
 }
 
-static void	get_trimmedstr(char const *s1, char const *set, char *res)
-{	
+static unsigned int	trim_beginning(char const *s1, char const *set)
+{
 	unsigned int	i;
-	unsigned int	j;
-	unsigned int	k;
 
 	i = 0;
-	k = 0;
 	while (s1[i])
 	{
-		j = 0;
-		while (set[j])
-		{
-			if (ft_strchr(&s1[i], set[j]) == 0)
-			{
-				j++;
-				if (set[j] == '\0')
-				{
-					res[k] = s1[i];
-					k++;
-				}
-			}
-			else
-				break ;
-		}
-		i++;
+		if (is_set(s1[i], set) == 1)
+			i++;
+		else
+			return (i);
 	}
+	return (i);
+}
+
+static int	is_it_end_of_str(char const *s1, char const *set)
+{
+	unsigned int	i;
+
+	i = 0;
+	while (s1[i])
+	{
+		if (is_set(s1[i], set) == 1)
+			i++;
+		else
+			return (0);
+	}
+	return (1);
+}
+
+static unsigned int	trim_last(char const *s1, char const *set)
+{
+	unsigned int	i;
+
+	i = 0;
+	while (s1[i])
+	{
+		if (is_set(s1[i], set) == 0)
+			i++;
+		else
+		{
+			if (is_it_end_of_str(&s1[i], set))
+				return (i - 1);
+			else
+				i++;
+		}
+	}
+	return (i);
 }
 
 char	*ft_strtrim(char const *s1, char const *set)
 {
-	unsigned int	count;
+	unsigned int	i;
+	unsigned int	j;
 	char			*res;
+	unsigned int	len;
 
-	count = get_count_for_malloc(s1, set);
-	res = (char *)malloc(sizeof(char) * (count + 1));
+	i = trim_beginning(s1, set);
+	j = trim_last(&s1[i], set);
+	len = j + 1;
+	j = 0;
+	res = (char *)malloc(sizeof(char) * (len + 1));
 	if (res == 0)
 		return (0);
-	get_trimmedstr(s1, set, res);
-	res[count] = '\0';
+	while (len > 0)
+	{
+		res[j] = s1[i + j];
+		j++;
+		len--;
+	}
+	res[j] = '\0';
 	return (res);
 }
