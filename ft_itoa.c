@@ -6,7 +6,7 @@
 /*   By: daejlee <daejlee@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/19 15:27:12 by daejlee           #+#    #+#             */
-/*   Updated: 2022/03/19 20:00:57 by daejlee          ###   ########.fr       */
+/*   Updated: 2022/03/30 18:32:28 by daejlee          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 #include "libft.h"
@@ -39,9 +39,9 @@ static void	alloc_num(char *res, unsigned int n, unsigned int dig)
 	if (n == 0)
 	{
 		res[i] = '0';
-		i++;
+		return ;
 	}
-	while (n > 0)
+	while (div > 0)
 	{
 		res[i] = n / div + '0';
 		n %= div;
@@ -82,7 +82,7 @@ char	*ft_itoa(int n)
 	if (res == 0)
 		return (0);
 	i = 0;
-	if (sign == -1)
+	if (sign == -1 && num != 0)
 	{
 		res[i] = '-';
 		i++;
