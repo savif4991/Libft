@@ -6,7 +6,7 @@
 /*   By: daejlee <daejlee@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/19 15:27:27 by daejlee           #+#    #+#             */
-/*   Updated: 2022/03/19 17:31:59 by daejlee          ###   ########.fr       */
+/*   Updated: 2022/03/30 17:49:58 by daejlee          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 #include "libft.h"
@@ -22,7 +22,8 @@ static unsigned int	count_wd(char const *s, char c)
 	{
 		while (s[i] == c && s[i])
 			i++;
-		count++;
+		if (s[i] != '\0')
+			count++;
 		while (s[i] != c && s[i])
 			i++;
 	}
@@ -67,10 +68,12 @@ void	make_arr(char const *s, char c, char **res)
 	i = 0;
 	j = 0;
 	k = 0;
-	while (s[j])
+	while (1)
 	{
 		while (s[j] == c && s[j])
 			j++;
+		if (s[j] == '\0')
+			break ;
 		k = 0;
 		while (s[j] != c && s[j])
 		{

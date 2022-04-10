@@ -6,7 +6,7 @@
 /*   By: daejlee <daejlee@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/19 15:27:14 by daejlee           #+#    #+#             */
-/*   Updated: 2022/03/19 16:12:56 by daejlee          ###   ########.fr       */
+/*   Updated: 2022/03/30 13:46:50 by daejlee          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 #include "libft.h"
@@ -27,4 +27,5 @@ void	*ft_memchr(const void *s, int c, size_t n)
 		else
 			i++;
 	}
+	return (0);
 }

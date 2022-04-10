@@ -6,7 +6,7 @@
 /*   By: daejlee <daejlee@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/19 15:27:19 by daejlee           #+#    #+#             */
-/*   Updated: 2022/03/19 17:08:41 by daejlee          ###   ########.fr       */
+/*   Updated: 2022/03/30 13:47:51 by daejlee          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 #include "libft.h"
@@ -23,4 +23,5 @@ void	*ft_memset(void *s, int c, size_t n)
 		p[i] = (char)c;
 		i++;
 	}
+	return (s);
 }
