@@ -16,18 +16,22 @@ t_list	*ft_lstmap(t_list *lst, void *(*f)(void *), void (*del)(void *))
 	int		size;
 	int		count;
 	t_list	*adr;
-	t_list	*temp;
 
 	count = 1;
 	size = ft_lstsize(lst);
 	adr = ft_lstnew(f(lst->content));
-	temp = lst;
+	if (adr == 0)
+		return (0);
 	while (count < size)
 	{
-		temp = temp->next;
+		lst = lst->next;
 		ft_lstadd_back(&adr, ft_lstnew(f(lst->content)));
+		if (ft_lstlast(adr) == 0)
+		{
+			ft_lstclear(&adr, del);
+			return (0);
+		}
 		count++;
 	}
-	ft_lstclear(&lst, del);
 	return (adr);
 }
