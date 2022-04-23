@@ -23,16 +23,12 @@ static int	malloc_by_wd(char **res, char const *s,
 	while (i < wd_count)
 	{
 		wd_size = 0;
-		while (1)
+		while (s[j] == c && s[j])
+			j++;
+		while (s[j] != c && s[j])
 		{
-			while (s[j] == c && s[j])
-				j++;
-			while (s[j] != c && s[j])
-			{
-				wd_size++;
-				j++;
-			}
-			break ;
+			wd_size++;
+			j++;
 		}
 		res[i] = (char *)malloc(sizeof(char) * (wd_size + 1));
 		if (res[i] == 0)
@@ -103,7 +99,7 @@ char	**ft_split(char const *s, char c)
 	res = (char **)malloc(sizeof(char *) * (wd_count + 1));
 	if (res == 0)
 		return (0);
-	if (malloc_by_wd(res, s, c, wd_count) == 0)
+	if (malloc_by_wd(res, s, c, wd_count) == 1)
 		purge(res);
 	make_arr(s, c, res);
 	return (res);
