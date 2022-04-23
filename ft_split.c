@@ -48,7 +48,7 @@ static void	purge(char **res)
 	unsigned int	i;
 
 	i = 0;
-	while (res[i])
+	while (*res[i])
 	{
 		free(res[i]);
 		i++;
