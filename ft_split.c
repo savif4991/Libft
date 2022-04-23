@@ -6,32 +6,13 @@
 /*   By: daejlee <daejlee@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/19 15:27:27 by daejlee           #+#    #+#             */
-/*   Updated: 2022/03/30 17:49:58 by daejlee          ###   ########.fr       */
+/*   Updated: 2022/04/23 19:06:31 by daejlee          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 #include "libft.h"
 
-static unsigned int	count_wd(char const *s, char c)
-{
-	unsigned int	i;
-	unsigned int	count;
-
-	i = 0;
-	count = 0;
-	while (s[i])
-	{
-		while (s[i] == c && s[i])
-			i++;
-		if (s[i] != '\0')
-			count++;
-		while (s[i] != c && s[i])
-			i++;
-	}
-	return (count);
-}
-
-static void	malloc_by_wd(char **res, char const *s,
-	char c, unsigned int wd_count)
+static int	malloc_by_wd(char **res, char const *s,
+		char c, unsigned int wd_count)
 {
 	unsigned int	wd_size;
 	unsigned int	i;
@@ -54,9 +35,25 @@ static void	malloc_by_wd(char **res, char const *s,
 			break ;
 		}
 		res[i] = (char *)malloc(sizeof(char) * (wd_size + 1));
+		if (res[i] == 0)
+			return (1);
 		i++;
 	}
 	res[i] = 0;
+	return (0);
+}
+
+static void	purge(char **res)
+{
+	unsigned int	i;
+
+	i = 0;
+	while (res[i])
+	{
+		free(res[i]);
+		i++;
+	}
+	free(res);
 }
 
 void	make_arr(char const *s, char c, char **res)
@@ -89,13 +86,25 @@ void	make_arr(char const *s, char c, char **res)
 char	**ft_split(char const *s, char c)
 {
 	unsigned int	wd_count;
+	unsigned int	i;
 	char			**res;
 
-	wd_count = count_wd(s, c);
+	i = 0;
+	wd_count = 0;
+	while (s[i])
+	{
+		while (s[i] == c && s[i])
+			i++;
+		if (s[i] != '\0')
+			wd_count++;
+		while (s[i] != c && s[i])
+			i++;
+	}
 	res = (char **)malloc(sizeof(char *) * (wd_count + 1));
 	if (res == 0)
 		return (0);
-	malloc_by_wd(res, s, c, wd_count);
+	if (malloc_by_wd(res, s, c, wd_count) == 0)
+		purge(res);
 	make_arr(s, c, res);
 	return (res);
 }
