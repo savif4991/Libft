@@ -19,11 +19,21 @@ static const char	*blank_check(const char *nptr)
 	return (&nptr[i]);
 }
 
+static int	outlier(unsigned int res, int sign)
+{
+	if (res > 2147483648 && sign == -1)
+		return (0);
+	else if (res > 2147483647 && sign == 1)
+		return (-1);
+	else
+		return (res * sign);
+}
+
 int	ft_atoi(const char *nptr)
 {
 	int					sign;
 	unsigned int		i;
-	int					res;
+	unsigned int		res;
 
 	nptr = blank_check(nptr);
 	sign = 1;
@@ -41,5 +51,6 @@ int	ft_atoi(const char *nptr)
 		res = res * 10 + nptr[i] - '0';
 		i++;
 	}
-	return (res * sign);
+	res = outlier(res, sign);
+	return (res);
 }

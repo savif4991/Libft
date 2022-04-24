@@ -33,7 +33,7 @@ static unsigned int	process_num(int n, int fd)
 void	ft_putnbr_fd(int n, int fd)
 {
 	unsigned int	num;
-	unsigned int	num_copy;
+	unsigned int	num_temp;
 	unsigned int	div;
 	char			temp;
 
@@ -41,17 +41,18 @@ void	ft_putnbr_fd(int n, int fd)
 	num = process_num(n, fd);
 	if (num == 0)
 		return ;
-	num_copy = num;
-	while (num_copy >= 10)
+	num_temp = num;
+	while (num_temp >= 10)
 	{
-		num_copy /= 10;
+		num_temp /= 10;
 		div *= 10;
 	}
-	while (num > 0)
+	while (div > 0)
 	{
-		temp = num / div + '0';
+		num_temp = num / div;
+		temp = num_temp + '0';
 		write(fd, &temp, 1);
-		num %= div;
+		num -= num_temp * div;
 		div /= 10;
 	}
 }

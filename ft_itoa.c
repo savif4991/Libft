@@ -28,6 +28,7 @@ static void	alloc_num(char *res, unsigned int n, unsigned int dig)
 {
 	unsigned int	div;
 	unsigned int	i;
+	unsigned int	temp;
 
 	div = 1;
 	i = 0;
@@ -36,15 +37,11 @@ static void	alloc_num(char *res, unsigned int n, unsigned int dig)
 		div *= 10;
 		dig--;
 	}
-	if (n == 0)
-	{
-		res[i] = '0';
-		return ;
-	}
 	while (div > 0)
 	{
-		res[i] = n / div + '0';
-		n %= div;
+		temp = n / div;
+		res[i] = temp + '0';
+		n -= temp * div;
 		div /= 10;
 		i++;
 	}
