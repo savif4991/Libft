@@ -17,9 +17,9 @@ void	*ft_calloc(size_t nmemb, size_t size)
 	size_t				i;
 	unsigned long long	temp;
 
-	temp = (unsigned long long)(nmemb * size);
-	if (temp > 4294967295)
+	if (nmemb > SIZE_MAX / size)
 		return (0);
+	temp = (unsigned long long)(nmemb * size);
 	arr = (char *)malloc(nmemb * size);
 	if (arr == 0)
 		return (0);
