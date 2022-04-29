@@ -6,7 +6,7 @@
 #    By: daejlee <daejlee@student.42seoul.k>        +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/03/30 13:56:42 by daejlee           #+#    #+#              #
-#    Updated: 2022/03/30 13:56:44 by daejlee          ###   ########.fr        #
+#    Updated: 2022/04/29 15:45:40 by daejlee          ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 NAME = libft.a
@@ -29,10 +29,10 @@ $(NAME) : $(OBJ)
 	ar rcs $(NAME) $(OBJ)
 
 clean :
-	rm -f $(OBJ)
+	rm -f $(OBJ) $(BONUS_OBJ)
 
 fclean :
-	rm -f $(OBJ) $(NAME)
+	rm -f $(OBJ) $(BONUS_OBJ) $(NAME)
 
 re :
 	$(MAKE) fclean
