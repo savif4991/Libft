@@ -6,7 +6,7 @@
 #    By: daejlee <daejlee@student.42seoul.k>        +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/03/30 13:56:42 by daejlee           #+#    #+#              #
-#    Updated: 2022/04/29 15:45:40 by daejlee          ###   ########.fr        #
+#    Updated: 2022/04/29 16:01:25 by daejlee          ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 NAME = libft.a
@@ -18,31 +18,35 @@ BONUS_SRC = ft_lstadd_back.c ft_lstadd_front.c ft_lstclear.c  ft_lstdelone.c ft_
 BONUS_OBJ = ft_lstadd_back.o ft_lstadd_front.o ft_lstclear.o  ft_lstdelone.o ft_lstiter.o ft_lstlast.o ft_lstmap.o ft_lstnew.o ft_lstsize.o
 
 ifdef WITH_BONUS
-    OBJ_FILES = $(OBJ) $(BONUS_OBJ)
+	OBJ_FILES = $(OBJ) $(BONUS_OBJ)
+	SRC_FILES = $(SRC) $(BONUS_SRC)
 else
-    OBJ_FILES = $(OBJ)
+	OBJ_FILES = $(OBJ)
+	SRC_FILES = $(SRC)
 endif
+
+.PHONY:		all bonus clean fclean re
 
 all : $(NAME)
 
-$(NAME) : $(OBJ)
-	ar rcs $(NAME) $(OBJ)
+$(NAME) : $(OBJ_FILES)
+	ar rcs $(NAME) $(OBJ_FILES)
 
 clean :
-	rm -f $(OBJ) $(BONUS_OBJ)
+	rm -f $(OBJ_FILES)
 
 fclean :
-	rm -f $(OBJ) $(BONUS_OBJ) $(NAME)
+	rm -f $(OBJ_FILES) $(NAME)
 
 re :
 	$(MAKE) fclean
 	$(MAKE) all
 
-$(OBJ) : $(SRC)
-	$(CC) -c $(FLAGS) $(SRC)
+$(OBJ_FILES) : $(SRC_FILES)
+	$(CC) $(CFLAGS) -c $(SRC_FILES)
 
 bonus : $(NAME) $(BONUS_OBJ)
-	make WITH_BONUS=1 all
+	make WITH_BONUS=1 $(NAME)
 
 $(BONUS_OBJ) : $(BONUS_SRC)
 	$(CC) -c $(FLAGS) $(BONUS_SRC)
