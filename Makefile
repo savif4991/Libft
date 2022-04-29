@@ -17,16 +17,22 @@ OBJ = ft_atoi.o ft_bzero.o ft_calloc.o ft_isalnum.o ft_isalpha.o ft_isascii.o ft
 BONUS_SRC = ft_lstadd_back.c ft_lstadd_front.c ft_lstclear.c  ft_lstdelone.c ft_lstiter.c ft_lstlast.c ft_lstmap.c ft_lstnew.c ft_lstsize.c
 BONUS_OBJ = ft_lstadd_back.o ft_lstadd_front.o ft_lstclear.o  ft_lstdelone.o ft_lstiter.o ft_lstlast.o ft_lstmap.o ft_lstnew.o ft_lstsize.o
 
+ifdef WITH_BONUS
+    OBJ_FILES = $(OBJ) $(BONUS_OBJ)
+else
+    OBJ_FILES = $(OBJ)
+endif
+
 all : $(NAME)
 
 $(NAME) : $(OBJ)
 	ar rcs $(NAME) $(OBJ)
 
 clean :
-	rm -f *.o
+	rm -f $(OBJ)
 
 fclean :
-	rm -f *.o $(NAME)
+	rm -f $(OBJ) $(NAME)
 
 re :
 	$(MAKE) fclean
@@ -36,7 +42,7 @@ $(OBJ) : $(SRC)
 	$(CC) -c $(FLAGS) $(SRC)
 
 bonus : $(NAME) $(BONUS_OBJ)
-	ar rcs $(NAME) $(BONUS_OBJ)
+	make WITH_BONUS=1 all
 
 $(BONUS_OBJ) : $(BONUS_SRC)
 	$(CC) -c $(FLAGS) $(BONUS_SRC)
