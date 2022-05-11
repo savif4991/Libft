@@ -13,21 +13,16 @@
 
 void	*ft_calloc(size_t nmemb, size_t size)
 {
-	char				*arr;
-	size_t				i;
-	unsigned long long	temp;
+	char	*arr;
 
-	if (nmemb > SIZE_MAX / size && size != 0)
-		return (0);
-	temp = (unsigned long long)(nmemb * size);
+	if (nmemb && size)
+	{
+		if (size > 18446744073709551615UL / nmemb)
+			return (NULL);
+	}
 	arr = (char *)malloc(nmemb * size);
 	if (arr == 0)
 		return (0);
-	i = 0;
-	while (i < size * nmemb)
-	{
-		arr[i] = 0;
-		i++;
-	}
+	ft_bzero(arr, nmemb * size);
 	return ((void *)arr);
 }
