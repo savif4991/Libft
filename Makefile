@@ -17,18 +17,10 @@ OBJ = ft_atoi.o ft_bzero.o ft_calloc.o ft_isalnum.o ft_isalpha.o ft_isascii.o ft
 BONUS_SRC = ft_lstadd_back.c ft_lstadd_front.c ft_lstclear.c  ft_lstdelone.c ft_lstiter.c ft_lstlast.c ft_lstmap.c ft_lstnew.c ft_lstsize.c
 BONUS_OBJ = ft_lstadd_back.o ft_lstadd_front.o ft_lstclear.o  ft_lstdelone.o ft_lstiter.o ft_lstlast.o ft_lstmap.o ft_lstnew.o ft_lstsize.o
 
-ifdef WITH_BONUS
-	OBJ_FILES = $(BONUS_OBJ)
-	SRC_FILES = $(BONUS_SRC)
-else
-	OBJ_FILES = $(OBJ)
-	SRC_FILES = $(SRC)
-endif
-
 all : $(NAME)
 
-$(NAME) : $(OBJ_FILES)
-	ar rcs $(NAME) $(OBJ_FILES)
+$(NAME) : $(OBJ)
+	ar rcs $(NAME) $(OBJ)
 
 clean :
 	rm -f $(OBJ) $(BONUS_OBJ) 
@@ -40,8 +32,11 @@ re :
 	$(MAKE) fclean
 	$(MAKE) all
 
-$(OBJ_FILES) : $(SRC_FILES)
-	$(CC) $(CFLAGS) -c $(SRC_FILES)
+$(OBJ) : $(SRC)
+	$(CC) $(CFLAGS) -c $(SRC)
+
+$(BONUS_OBJ) : $(BONUS_SRC)
+	$(CC) $(CFLAGS) -c $(BONUS_SRC)
 
 bonus : $(NAME) $(BONUS_OBJ)
-	make WITH_BONUS=1 $(NAME)
+	ar rcs $(NAME) $(BONUS_OBJ)

@@ -84,7 +84,7 @@ char	*ft_strtrim(char const *s1, char const *set)
 	unsigned int	len;
 
 	if (!s1)
-		return (NULL);
+		return (0);
 	i = trim_beginning(s1, set);
 	j = trim_last(&s1[i], set);
 	len = j + 1;

@@ -11,7 +11,8 @@
 /* ************************************************************************** */
 #include "libft.h"
 
-int	find_wd(const char *s1, const char *s2, unsigned int i, unsigned int n)
+static int	find_wd(const char *s1, const char *s2, unsigned int i,
+	unsigned int n)
 {
 	unsigned int	j;
 

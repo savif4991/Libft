@@ -10,6 +10,7 @@
 /*                                                                            */
 /* ************************************************************************** */
 #include "libft.h"
+#include <unistd.h>
 
 static unsigned int	process_num(int n, int fd)
 {

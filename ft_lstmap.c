@@ -18,7 +18,7 @@ t_list	*ft_lstmap(t_list *lst, void *(*f)(void *), void (*del)(void *))
 	t_list	*adr;
 
 	if (!lst)
-		return (NULL);
+		return (0);
 	count = 1;
 	size = ft_lstsize(lst);
 	adr = ft_lstnew(f(lst->content));

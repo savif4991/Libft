@@ -9,6 +9,8 @@
 /*   Updated: 2022/03/30 14:31:05 by daejlee          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
+#include "libft.h"
+
 static const char	*blank_check(const char *nptr)
 {
 	unsigned int	i;
