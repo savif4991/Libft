@@ -85,6 +85,8 @@ char	**ft_split(char const *s, char c)
 	unsigned int	i;
 	char			**res;
 
+	if (!s)
+		return (NULL);
 	i = 0;
 	wd_count = 0;
 	while (s[i])
